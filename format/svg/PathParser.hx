@@ -93,8 +93,13 @@ class PathParser
 					var code = ch < 0 || ch > 127 ? UNKNOWN : sCommandArgs[ch];
 					if (code > FLOAT)
 						break;
-					if (code == FLOAT_DOT && seen_dot)
-						break;
+					if (code == FLOAT_DOT)
+					{
+						if (seen_dot)
+							break;
+						else
+							seen_dot = true;
+					}
 					if (e_pos >= 0)
 					{
 						if (code == FLOAT_SIGN)
