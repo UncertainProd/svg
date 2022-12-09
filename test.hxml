@@ -9,6 +9,5 @@
 -D lime_cairo
 --remap flash:openfl
 
-## Neko
--neko build/neko_test.n
--cmd "neko build/neko_test.n"
+--cpp build/cpp
+--cmd "build\cpp\TestMain.exe"
