@@ -222,6 +222,8 @@ class SVGData extends Group
 			var vbox = svg.get("viewBox");
 			var params = vbox.indexOf(",") != -1 ? vbox.split(",") : vbox.split(" ");
 			viewBox = new Rectangle(trimToFloat(params[0]), trimToFloat(params[1]), trimToFloat(params[2]), trimToFloat(params[3]));
+			width = viewBox.width;
+			height = viewBox.height;
 		}
 
 		loadGroup(this, svg, new Matrix(1, 0, 0, 1, -viewBox.x, -viewBox.y), null);
