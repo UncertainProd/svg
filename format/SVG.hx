@@ -18,20 +18,23 @@ class SVG
 		}
 	}
 
-	public function render(graphics:Graphics, x:Float = 0, y:Float = 0, width:Int = -1, height:Int = -1, ?inLayer:String = null)
+	// public function render(graphics:Graphics, x:Float = 0, y:Float = 0, width:Int = -1, height:Int = -1, ?inLayer:String = null)
+	// public function render(graphics:Graphics, x:Float = 0, y:Float = 0, width:Int = -1, height:Int = -1, angle:Float = 0.0, ?inMatrix:Matrix,
+	// 		?inLayer:String = null)
+	public function render(graphics:Graphics, matrix:Matrix, ?inLayer:String = null)
 	{
 		if (data == null)
 			return;
 
-		var matrix = new Matrix();
-		matrix.identity();
+		// var matrix = new Matrix();
+		// matrix.identity();
 
-		if (width > -1 && height > -1)
-		{
-			matrix.scale(width / data.width, height / data.height);
-		}
+		// if (width > -1 && height > -1)
+		// {
+		// 	matrix.scale(width / data.width, height / data.height);
+		// }
 
-		matrix.translate(x, y);
+		// matrix.translate(x, y);
 
 		var renderer = new SVGRenderer(data, inLayer);
 
